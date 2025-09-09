@@ -1,0 +1,175 @@
+
+<!-- Button 0 --> 
+<style>
+    .orig-button {
+        font-family: "Roboto Flex", system-ui;
+        position: relative;
+        padding: 1.2rem 2.4rem;
+        font-size: 1.1rem;
+        color: white;
+        background: #2977bd;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 120px;
+        text-align: center;
+        display: block;
+    }
+</style>
+<br><br>
+<span class='orig-button'>Поделиться</span>
+<br>
+<!-- Button 1 -->
+<style>
+    /* Gradient Border Button */
+    .gradient-border-button {
+        font-family: "Roboto Flex", system-ui;
+        position: relative;
+        padding: 1.2rem 2.4rem;
+        font-size: 1.1rem;
+        color: white;
+        background: #2977bd;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .gradient-border-button::before {
+        content: '';
+        position: absolute;
+        inset: -5px;
+        background: linear-gradient(45deg, #a5cdff, #c4afff, #a0caff);
+        border-radius: 12px;
+        z-index: -1;
+        transition: opacity 0.3s ease;
+        animation: borderRotate 4s linear infinite;
+    }
+
+    @keyframes borderRotate {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+
+        100% {
+            filter: hue-rotate(360deg);
+        }
+    }
+
+    /*.gradient-border-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(96, 165, 250, 0.4);
+    }*/
+
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .button-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .button-wrapper {
+            min-height: 120px;
+        }
+    }
+</style>
+
+<div class="button-wrapper">
+    <button class="gradient-border-button">
+        <span>Пройти опрос</span>
+    </button>
+</div>
+<br><br>
+<br><br>
+
+<!-- Button 2 -->
+<style>
+    .pulse-button {
+        font-family: "Roboto Flex", system-ui;
+        position: relative;
+        padding: 1.2rem 2.4rem;
+        font-size: 1.1rem;
+        color: white;
+        background: #2977bd;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 0 0 0 #539ee0;
+        animation: pulse 2.5s infinite;
+    }
+
+    .pulse-button:hover {
+        animation: none;
+    }
+
+    @keyframes pulse {
+        0% {
+            /*@include transform(scale(.98));*/
+        }
+
+        20% {
+            box-shadow: 0 0 0 20px #ffffff00;
+        }
+
+        50% {
+            box-shadow: 0 0 0 0 #ffffff00;
+        }
+    }
+</style>
+
+<span class='orig-button'>Поделиться</span>
+<br><br>
+<span class='pulse-button'>Пройти опрос</span>
+<br><br>
+<br><br>
+<!-- Button 3 -->
+
+
+<style>
+    .btn {
+        font-family: "Roboto Flex", system-ui;
+        position: relative;
+        padding: 1.2rem 2.4rem;
+        font-size: 1.1rem;
+        color: white;
+        background: #2977bd;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        overflow: hidden;
+        width: fit-content;
+    }
+
+    .btn:before {
+        content: '';
+        width: 100%;
+        height: 200%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+        filter: blur;
+        background: linear-gradient(to left, transparent 0%, #fff 40%, #fff 60%, transparent 100%);
+        transform: translate(-100%, -25%) rotate(10deg);
+        animation: blick 5s infinite;
+    }
+
+    @keyframes blick {
+        0% {
+            transform: translate(-100%, -25%) rotate(10deg);
+        }
+
+        20% {
+            transform: translate(100%, -25%) rotate(10deg);
+        }
+
+        100% {
+            transform: translate(100%, -25%) rotate(10deg);
+        }
+    }
+</style>
+
+<span class='orig-button'>Поделиться</span>
+<br>
+<div class="btn">Пройти опрос</div>
